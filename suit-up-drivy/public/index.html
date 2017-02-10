@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS/HTML Workshop with Drivy</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="C:/Users/cooorentin/Desktop/suit-up-drivy/public/style.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </head>
+  <body>
+	<div class="mdl-grid">
+		<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<img src="C:/Users/cooorentin/Desktop/suit-up-drivy/public/img/drivy.png" style="width: 50px;" alt="" />
+				<div class="centrage"><h1 class="mdl-card__title-text">Drivy</h1></div>
+			</div>
+			<figure class="mdl-card__media">
+				<img src="C:/Users/cooorentin/Desktop/suit-up-drivy/public/img/background.jpg" alt="" />
+			</figure>
+			<div class="mdl-card__supporting-text">
+				Welcome! Fill out this form to have the informations about the prices.
+			</div>
+			<div class="mdl-card__supporting-text">
+			<div id="car">
+			<fieldset>
+			<legend>Car</legend>
+			<div class="mdl-textfield mdl-js-textfield">
+				<input class="model" type="text" placeholder="Car model"/> 
+				<input class="price-by-day" type="number" placeholder="Price by day"/>
+				<input class="price-by-km" type="number" placeholder="Price by km"/>
+			</div>
+			</div>
+			</fieldset>
+			</div>
+			<div class="mdl-card__supporting-text">
+			<fieldset>
+			<legend>Rental</legend>
+			<br>
+			<div id="rental">
+				<input class="begin" type="date" placeholder="Rental begin date"/>
+				<input class="end" type="date" placeholder="Rental end date"/>
+				<input class="distance" type="number" placeholder="Distance in km"/>
+				<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+					<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked placeholder="Deductible option">
+					<span class="mdl-checkbox__label">Option</span>
+				</label>
+			</div>
+			</fieldset>
+			</div>
+			<button id="compute" class="mdl-button mdl-js-button mdl-js-ripple-effect">Compute</button>
+		</div>
+	</div>
+	
+	<div class="mdl-grid">
+		<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<div class="centrage"><h1 class="mdl-card__title-text">Résultats</h1></div>
+			</div>
+			<div id="actors"></div>
+			<script id="template" type="x-tmpl-mustache">
+			{{#actors}}
+				<div class="actor">
+				<ul class="demo-list-icon mdl-list">
+					<li class="mdl-list__item">
+						<span class="mdl-list__item-primary-content">
+							{{who}} {{type}}
+						</span>
+						<span class="mdl-list__item-primary-content">
+							{{amount}}
+						</span>
+					</li>
+				</ul>
+				</div>
+			{{/actors}}
+			</script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+			<script src="drivy.js"></script>
+			<script src="index.js"></script>
+		</div>
+	</div>
+  </body>
+</html>
